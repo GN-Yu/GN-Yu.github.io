@@ -337,6 +337,14 @@ section {
     margin: auto 0;
 }
 
+h3 {
+    margin-bottom: 0.7rem;
+}
+
+p {
+    margin-bottom: 0.4rem;
+}
+
 /* Experience Section */
 
 #experience {
@@ -388,13 +396,14 @@ article .icon {
 }
 
 .project-img {
-    border-radius: 2rem;
+    border-radius: 1.5rem;
     width: 90%;
     height: 90%;
 }
 
 .project-title {
-    margin: 1rem;
+    font-size: 1.5rem;
+    margin: 0.5rem;
     color: black;
 }
 
@@ -451,5 +460,6 @@ footer {
 }
 
 footer p {
+    font-size: small;
     text-align: center;
 }

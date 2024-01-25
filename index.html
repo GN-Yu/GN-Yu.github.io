@@ -6,6 +6,10 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
 </head>
 <body>
     <nav id="desktop-nav">
@@ -37,7 +41,7 @@
     </nav>
     <section id="profile">
         <div class="section__pic-container">
-            <img src="./assets/profile-pic.png" alt="Guoning Yu profile picture">
+            <img src="./assets/hero.jpg" alt="Guoning Yu profile picture">
         </div>
         <div class="section__text">
             <p class="section__text__p1">Hello, I'm</p>
@@ -69,7 +73,7 @@
         <div class="section-container">
             <div class="section__pic-container">
                 <img 
-                    src="./assets/about-pic.png" 
+                    src="./assets/yu-about-pic.jpg" 
                     alt="Profile picture" 
                     class="about-pic"
                 />
@@ -83,7 +87,8 @@
                             class="icon"
                         />
                         <h3>Experience</h3>
-                        <p>2+ year <br>Data Science Research</p>
+                        <p>4+ year research<br>Pure/Applied Mathematics </p>
+                        <p>2+ year research<br>Data Science/Machine Learning </p>
                     </div>
                     <div class="details-container">
                         <img 
@@ -92,12 +97,16 @@
                         class="icon"
                         />
                         <h3>Education</h3>
-                        <p>B. Sc. Mathematics <br>Ph. D. Mathematics expected 2024</p>
+                        <p>B. Sc.<br>Mathematics</p>
+                        <p> Ph. D. expected 2024<br>Mathematics</p>
                     </div>
                 </div>
                 <div class="text-container">
                     <p>
                         ML and DS practitioner | Applied Math grad student | Seeking full-time Aug 2024 | Off-cycle intern anytime | PhD in Math expected 2024
+                        <br><br>
+                        When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+                        \[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]
                         <br><br>
                         I'm a ...
                     </p>
@@ -151,13 +160,13 @@
                             <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
                             <div>
                                 <h3>Git</h3>
-                                <p>Basic</p>
+                                <p>Intermediate</p>
                             </div>
                         </article>
                         <article>
                             <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
                             <div>
-                                <h3>AWS</h3>
+                                <h3>AWS/Azure</h3>
                                 <p>Basic</p>
                             </div>
                         </article>
@@ -183,7 +192,7 @@
                         <article>
                             <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
                             <div>
-                                <h3>LaTeX</h3>
+                                <h3>\(\LaTeX\)</h3>
                                 <p>Experienced</p>
                             </div>
                         </article>
@@ -215,21 +224,21 @@
                 </div>
                 <div class="details-container color-container">
                     <div class="article-container">
-                        <img src="./assets/project-2.png" alt="Project 2" class="project-img">
-                        <h2 class="experience-sub-title project-title">Linear Arboricity of Degenerate Graphs</h2>
+                        <img src="./assets/CPG.png" alt="Project 3" class="project-img">
+                        <h2 class="experience-sub-title project-title">Mouse Locomotion Control</h2>
                         <div class="btn-container">
-                            <button class="btn btn-color-2 project-btn" onclick="location.href='https://www.youtube.com/watch?v=eRsGnnrOb0Q'">Video</button>
-                            <button class="btn btn-color-2 project-btn" onclick="location.href='https://doi.org/10.1002/jgt.23040'">Paper (newest)</button>
+                            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/GN-Yu/Locomotor_quad'">Github</button>
+                            <button class="btn btn-color-2 project-btn" onclick="location.href='https://www.biorxiv.org/content/biorxiv/early/2023/11/02/2023.10.31.564886.full.pdf'">Paper</button>
                         </div>
                     </div>
                 </div>
                 <div class="details-container color-container">
                     <div class="article-container">
-                        <img src="./assets/project-3.png" alt="Project 3" class="project-img">
-                        <h2 class="experience-sub-title project-title">Mouse Locomotion Control</h2>
+                        <img src="./assets/project-2.png" alt="Project 2" class="project-img">
+                        <h2 class="experience-sub-title project-title">Linear Arboricity of Degenerate Graphs</h2>
                         <div class="btn-container">
-                            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/GN-Yu/Locomotor_quad'">Github</button>
-                            <button class="btn btn-color-2 project-btn" onclick="location.href='https://www.biorxiv.org/content/biorxiv/early/2023/11/02/2023.10.31.564886.full.pdf'">Paper</button>
+                            <button class="btn btn-color-2 project-btn" onclick="location.href='https://www.youtube.com/watch?v=eRsGnnrOb0Q'">Video</button>
+                            <button class="btn btn-color-2 project-btn" onclick="location.href='https://doi.org/10.1002/jgt.23040'">Paper (newest)</button>
                         </div>
                     </div>
                 </div>
@@ -248,7 +257,7 @@
         <div class="contact-info-upper-container">
             <div class="contact-info-container">
                 <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon">
-                <p><a href="mailto:gyu6@student.gsu.edu">gyu6@student.gsu.edu</a></p>
+                <p><a href="mailto:gyu6@gsu.edu">gyu6@gsu.edu</a></p>
             </div>
             <div class="contact-info-container">
                 <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon">
