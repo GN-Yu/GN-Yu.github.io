@@ -67,7 +67,7 @@ a {
 a:hover {
     color: gray;
     text-decoration: underline;
-    text-underline-offset: 0.8rem;
+    text-underline-offset: 0.3rem;
     text-decoration-color: rgb(181, 181, 181);
 }
 
@@ -231,9 +231,14 @@ section {
 
 /* Icon */
 
-.icon {
+.clickable-icon {
     cursor: pointer;
     height: 2rem;
+}
+
+.icon {
+    height: 2rem;
+    cursor: default;
 }
 
 /* Buttons */
@@ -345,20 +350,20 @@ p {
     margin-bottom: 0.4rem;
 }
 
-/* Experience Section */
+/* Skills Section */
 
-#experience {
+#skills {
     position: relative;
 }
 
-.experience-sub-title {
+.skills-sub-title {
     color: rgb(85, 85, 85);
     font-weight: 600;
     font-size: 1.75rem;
     margin-bottom: 2rem;
 }
 
-.experience-details-container {
+.skills-details-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -395,15 +400,25 @@ article .icon {
     background: rgb(250, 250, 250);
 }
 
+.project-img-container {
+    height: 360px;
+    width: 360px;
+    border-radius: 1rem;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .project-img {
-    border-radius: 1.5rem;
-    width: 90%;
-    height: 90%;
+    height: 280px;
+    width: auto;
 }
 
 .project-title {
-    font-size: 1.5rem;
-    margin: 0.5rem;
+    font-size: 1.4rem;
+    margin: 0.1rem 0.5rem;
+    
     color: black;
 }
 
@@ -411,6 +426,36 @@ article .icon {
     color: black;
     border-color: rgb(163, 163, 163);
 }
+
+/* Publications Section */
+
+#publications {
+    position: relative;
+    margin-top: 10rem;
+}
+
+.publication-container {
+    margin: 1.5rem 1rem;
+}
+
+.publication-list li {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: bold; /* or use a number like 600, 700, etc. */
+}
+
+.publication-list p {
+    margin-bottom: 0.1rem;
+}
+
+.footnote {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #666; /* Gray color for footnote */
+    text-align: justify; /* Center align the text */
+    margin-top: 40px; /* Add some space at the top */
+}
+
 
 /* Contact */
 
@@ -452,7 +497,7 @@ article .icon {
     height: 2.5rem;
 }
 
-/* Foorer Section */
+/* Footer Section */
 
 footer {
     height: 26vh;
