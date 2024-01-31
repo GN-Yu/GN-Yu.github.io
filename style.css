@@ -3,6 +3,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Long+Cang&family=Noto+Sans+SC&display=swap');
+
 
 * {
   margin: 0;
@@ -113,24 +115,18 @@ a:hover {
     top: 100%;
     right: 0;
     width: fit-content;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8);
     max-height: 0;
     overflow: hidden;
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* align-items: center; */
-    /* gap: 2rem; */
-    /* padding: 2rem 0; */
-    /* visibility: hidden; */
-    /* opacity: 0; */
     transition: all 0.3s ease-in-out;
+    border-radius: 1rem;
 }
 
 .menu-links a {
     display: block;
     padding: 10px;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #000;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
@@ -220,14 +216,20 @@ section {
 .profile-name-title {
     font-size: 3rem;
     text-align: center;
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.4rem;
+}
 
+.profile-name-chinese {
+    font-family: 'Long Cang', cursive;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
 
 .title {
     font-size: 3rem;
     text-align: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 
 #socials-container {
@@ -330,6 +332,10 @@ section {
     bottom: 2.5rem;
 }
 
+.arrow:hover {
+    cursor: pointer;
+}
+
 .details-container {
     padding: 1.5rem;
     flex: 1;
@@ -407,6 +413,7 @@ article .icon {
 }
 
 .color-container {
+    padding: 1rem 0;
     border-color: rgb(163, 163, 163);
     background: rgb(250, 250, 250);
 }
@@ -428,12 +435,17 @@ article .icon {
 
 .project-title {
     font-size: 1.4rem;
+    line-height: 1.5em; /* adjust as needed */
+    height: 3em; /* 2 lines */
+    overflow: hidden; /* hides extra content */
     margin: 0.1rem 0.3rem;
     color: black;
 }
 
 .project-btn-container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 0.7rem;
 }
 
@@ -450,7 +462,7 @@ article .icon {
 
 #publications {
     position: relative;
-    margin-top: 10rem;
+    margin-top: 5rem;
 }
 
 .publication-container {
@@ -460,7 +472,7 @@ article .icon {
 .publication-list li {
     margin-top: 0.5rem;
     font-size: 1.2rem;
-    font-weight: bold; /* or use a number like 600, 700, etc. */
+    font-weight: bold;
 }
 
 .publication-list p {
@@ -475,6 +487,43 @@ article .icon {
     margin-top: 40px; /* Add some space at the top */
 }
 
+/* Presentations Section */
+
+#presentations {
+    position: relative;
+}
+
+.publication-container {
+    margin: 1.5rem 1rem;
+}
+
+.presentation-list {
+    list-style: none;
+}
+
+.presentation-item {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 1rem;
+}
+
+.presentation-date {
+    font-size: 1.2rem;
+    margin-right: 1.5rem;
+}
+
+.presentation-place {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+    text-align: left;
+}
+.presentation-title {
+    font-weight: normal;
+    text-align: left;
+}
+
+
 
 /* Contact */
 
@@ -487,11 +536,12 @@ article .icon {
 
 .contact-info-upper-container {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     border-radius: 2rem;
     border: rgb(53, 53, 53) 0.1rem solid;
     border-color: rgb(163, 163, 163);
     background: rgb(250, 250, 250);
+    gap: 0.7rem;
     margin: 2rem auto;
     padding: 0.5rem;
 }
@@ -502,6 +552,7 @@ article .icon {
     justify-content: center;
     gap: 0.5rem;
     margin: 1rem;
+    padding: 0.2rem 0.5rem;
 }
 
 .contact-info-container p {
@@ -510,10 +561,6 @@ article .icon {
 
 .contact-icon {
     cursor: default;
-}
-
-.email-icon {
-    height: 2.5rem;
 }
 
 /* Footer Section */
