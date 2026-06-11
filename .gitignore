@@ -11,5 +11,6 @@
 
 # Other redundant files
 .DS_Store
+.claude/settings.local.json
 node_modules/
 dist/
