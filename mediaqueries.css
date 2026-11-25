@@ -1,120 +1,65 @@
-@media screen and (max-width: 1400px) {
-    #profile {
-        height: 83vh;
-        margin-bottom: 6rem;
-    }
+@media screen and (max-width: 1200px) {
+    #desktop-nav { display: none; }
+    #hamburger-nav { display: flex; min-height: 100px; }
+    .hamburger-icon { width: 44px; height: 44px; padding: 10px 7px; }
+    .hamburger-icon.open span:first-child { transform: translateY(11px) rotate(45deg); }
+    .hamburger-icon.open span:last-child { transform: translateY(-11px) rotate(-45deg); }
 
-    .about-containers {
-        flex-wrap: wrap;
-    }
+    section { width: 90%; padding: 3rem 0; }
+    #profile { gap: 2.5rem; min-height: 620px; }
+    #profile .section__pic-container { flex-basis: 300px; width: 300px; height: auto; }
+    .arrow { display: none; }
+
+    #about .section-container { gap: 2rem; }
+    #about .section__pic-container { flex-basis: 260px; width: 260px; }
+    #about .about-containers { gap: 1rem; }
+    #about .details-container { padding: 1rem; }
+
+    #projects .about-containers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    #projects .details-container:last-child { grid-column: 1 / -1; width: calc(50% - 0.75rem); justify-self: center; }
+    footer .nav-links { gap: 1.5rem; font-size: 1.125rem; flex-wrap: wrap; justify-content: center; }
 }
 
-@media screen and (max-width: 1200px) {
-    #desktop-nav {
-        display: none;
-    }
-    #hamburger-nav {
-        display: flex;
-    }
-
-    #skills, .experience-details-container {
-        margin-top: 2rem;
-    }
-    #profile,
-    .section-container {
-        display: block;
-    }
-
-    .arrow {
-        display: none;
-    }
-
-    section, 
-    .section-container {
-        height: fit-content;
-    }
-
-    section {
-        margin: 0 5%;
-    }
-
-    .section__pic-container {
-        width: 275px;
-        height: 275px;
-        margin: 0 auto 2rem;
-    }
-
-    .about-containers {
-        margin-top: 0;
-    }
+@media screen and (max-width: 800px) {
+    #profile { flex-direction: column; min-height: 0; padding-top: 1.5rem; gap: 2rem; }
+    #profile .section__pic-container { flex-basis: auto; margin: 0; }
+    #profile .section__text { max-width: 560px; }
+    #about .section-container { flex-direction: column; }
+    #about .section__pic-container { flex-basis: auto; margin: 0; width: 300px; }
+    #about .about-details-container { width: 100%; }
+    #projects .about-containers { grid-template-columns: minmax(0, 1fr); max-width: 560px; margin: 2rem auto 0; }
+    #projects .details-container:last-child { grid-column: auto; width: auto; justify-self: stretch; }
+    .project-title { min-height: 0; }
+    .project-img-container { height: 240px; }
+    .project-img { max-height: 230px; }
+    .contact-info-upper-container { flex-wrap: wrap; justify-content: center; }
+    .contact-info-container { margin: 0.5rem; }
 }
 
 @media screen and (max-width: 600px) {
-    #contact,
-    footer {
-        height: 40vh;
-    }
-
-    #profile {
-        height: 83vh;
-        margin-bottom: 0;
-    }
-
-    article {
-        font-size: 1rem;
-    }
-
-    footer nav {
-        height: fit-content;
-        margin-bottom: 2rem;
-    }
-
-    .about-containers,
-    .contact-info-upper-container,
-    .btn-container {
-        flex-wrap: wrap;
-    }
-
-    .contact-info-container {
-        margin: 0;
-    }
-
-    .contact-info-container p,
-    .nav-links li a {
-        font-size: 1rem;
-    }
-
-    .experience-sub-title {
-        font-size: 1.25rem;
-    }
-
-    .logo {
-        font-size: 1.5rem;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        gap: 0.5rem;
-        text-align: center;
-    }
-
-    .section__pic-container {
-        width: auto;
-        height: 46vw;
-        justify-content: center;
-    }
-
-    .section__text_p2  {
-        font-size: 1.25rem;
-    }
-
-    .title {
-        font-size: 2rem;
-    }
-
-    .text-container {
-        text-align: justify;
-    }
-
-
+    #hamburger-nav { min-height: 90px; justify-content: space-between; width: 90%; margin: 0 auto; }
+    .logo { font-size: 1.5rem; }
+    .mobile-controls { gap: 0.5rem; }
+    .theme-toggle { padding-inline: 0.65rem; }
+    section { padding: 2.5rem 0; }
+    #profile .section__pic-container, #about .section__pic-container { width: min(70vw, 300px); }
+    .profile-name-title { font-size: 2.5rem; }
+    .profile-name-chinese { font-size: 1.8rem; }
+    .section__text .profile-role { font-size: 1.125rem; }
+    .title { font-size: 2rem; }
+    .btn-container { flex-wrap: wrap; }
+    #about .about-containers { flex-direction: column; }
+    .text-container { text-align: left; }
+    .presentation-item { flex-direction: column; gap: 0.25rem; margin-top: 1.5rem; }
+    .presentation-date { flex-basis: auto; font-size: 1rem; }
+    .presentation-place { font-size: 1.0625rem; }
+    .publication-container { margin: 1.5rem 1rem; }
+    .publication-list li { font-size: 1.0625rem; }
+    .footnote { text-align: left; }
+    #contact { min-height: 0; }
+    .contact-info-upper-container { margin: 1.5rem auto; max-width: 100%; }
+    .contact-info-container { margin: 0.25rem; padding: 0.25rem; }
+    .contact-info-container p { font-size: 1rem; overflow-wrap: anywhere; }
+    footer nav { min-height: 0; margin-bottom: 2rem; }
+    footer .nav-links { flex-direction: column; gap: 0.75rem; text-align: center; font-size: 1rem; }
 }
