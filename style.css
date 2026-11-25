@@ -6,17 +6,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Long+Cang&family=Noto+Sans+SC&display=swap');
 
 
+/* Shared palette keeps the existing light appearance and supplies dark surfaces. */
+:root {
+    color-scheme: light;
+    --page-bg: #ffffff;
+    --surface-bg: #ffffff;
+    --card-bg: #fafafa;
+    --text: #000000;
+    --text-muted: #555555;
+    --text-strong: #333333;
+    --link-hover: #646464;
+    --border: #a3a3a3;
+    --border-strong: #353535;
+    --button-bg: #353535;
+    --button-text: #ffffff;
+    --button-hover: #000000;
+    --button-hover-border: #ffffff;
+    --focus: #555555;
+    --menu-shadow: 0 8px 24px rgb(0 0 0 / 10%);
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --page-bg: #16181b;
+    --surface-bg: #1f2227;
+    --card-bg: #1f2227;
+    --text: #f0f1f3;
+    --text-muted: #bdc1c9;
+    --text-strong: #e1e4e9;
+    --link-hover: #d0d4dc;
+    --border: #565d68;
+    --border-strong: #b4bac4;
+    --button-bg: #e5e7eb;
+    --button-text: #16181b;
+    --button-hover: #ffffff;
+    --button-hover-border: #e5e7eb;
+    --focus: #d0d4dc;
+    --menu-shadow: 0 8px 24px rgb(0 0 0 / 35%);
+}
+
 * {
   margin: 0;
   padding: 0;
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
+  background: var(--page-bg);
+  color: var(--text);
   /* font-size: 16px;
   line-height: 1.5;
-  color: #333;
+  color: var(--text-strong);
   background: #f4f4f4; */
 }
 
@@ -25,13 +66,14 @@ html {
 }
 
 p {
-  color: rgb(85, 85, 85)
+  color: var(--text-muted);
+  line-height: 1.65;
   /* margin: 1rem 0; */
 }
 
 /* Transition */
 
-a, .button {
+a, button {
   transition: all 0.3s ease;
 }
 
@@ -44,7 +86,7 @@ nav, .nav-links {
 nav {
     justify-content: space-around;
     align-items: center;
-    min-height: 17vh;
+    min-height: 120px;
     /* background-color: #fff;
     padding: 0 10%;
     position: sticky;
@@ -61,16 +103,16 @@ nav {
 }
 
 a {
-    color: #000;
+    color: var(--text);
     text-decoration: none;
-    text-decoration-color: white;
+    text-decoration-color: currentColor;
 }
 
 a:hover {
-    color: gray;
+    color: var(--link-hover);
     text-decoration: underline;
     text-underline-offset: 0.3rem;
-    text-decoration-color: rgb(181, 181, 181);
+    text-decoration-color: var(--border);
 }
 
 .logo {
@@ -101,12 +143,15 @@ a:hover {
     height: 24px;
     width: 30px;
     cursor: pointer;
+    padding: 0;
+    background: none;
+    border: 0;
 }
 
 .hamburger-icon span {
     width: 100%;
     height: 2px;
-    background-color: #000;
+    background-color: var(--text);
     transition: all 0.3s ease-in-out;
 }
 
@@ -115,7 +160,9 @@ a:hover {
     top: 100%;
     right: 0;
     width: fit-content;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: var(--surface-bg);
+    z-index: 20;
+    box-shadow: var(--menu-shadow);
     max-height: 0;
     overflow: hidden;
     transition: all 0.3s ease-in-out;
@@ -127,7 +174,7 @@ a:hover {
     padding: 10px;
     text-align: center;
     font-size: 1.2rem;
-    color: #000;
+    color: var(--text);
     text-decoration: none;
     transition: all 0.3s ease-in-out;
 }
@@ -167,11 +214,10 @@ a:hover {
 /* Sections */
 
 section {
-    padding-top: 4vh;
-    height: 96vh;
-    margin: 0 10rem;
-    box-sizing: border-box;
-    min-height: fit-content;
+    padding: 4rem 0;
+    margin: 0 auto;
+    width: min(1120px, 86%);
+    scroll-margin-top: 1rem;
 }
 
 .section-container {
@@ -183,8 +229,11 @@ section {
 #profile {
     display: flex;
     justify-content: center;
-    gap: 5rem;
-    height: 80vh;
+    align-items: center;
+    gap: 4rem;
+    min-height: min(730px, 80vh);
+    padding-top: 2rem;
+    padding-bottom: 4rem;
 }
 
 /* Is this repeating? */
@@ -269,7 +318,7 @@ section {
 
 .btn-color-1,
 .btn-color-2 {
-    border: rgb(53, 53, 53) 0.1rem solid;
+    border: var(--border-strong) 0.1rem solid;
 }
 
 .btn-color-1:hover,
@@ -279,12 +328,13 @@ section {
 
 .btn-color-1,
 .btn-color-2:hover {
-    background: rgb(53, 53, 53);
-    color: white;
+    background: var(--button-bg);
+    color: var(--button-text);
 }
 
 .btn-color-1:hover {
-    background: black;
+    background: var(--button-hover);
+    color: var(--button-text);
 }
 
 .btn-color-2 {
@@ -292,7 +342,7 @@ section {
 }
 
 .btn-color-2:hover {
-    border: rgb(255, 255, 255) 0.1rem solid;
+    border: var(--button-hover-border) 0.1rem solid;
 }
 
 .btn-container {
@@ -328,8 +378,10 @@ section {
 
 .arrow {
     position: absolute;
-    right: -5rem;
-    bottom: 2.5rem;
+    right: -3rem;
+    bottom: 1rem;
+    display: inline-flex;
+    padding: 0.5rem;
 }
 
 .arrow:hover {
@@ -339,16 +391,16 @@ section {
 .details-container {
     padding: 1.5rem;
     flex: 1;
-    background: rgb(255, 255, 255);
+    background: var(--surface-bg);
     border-radius: 2rem;
-    border: rgb(53, 53, 53) 0.1rem solid;
-    border-color: rgb(163, 163, 163);
+    border: var(--border-strong) 0.1rem solid;
+    border-color: var(--border);
     text-align: center;
 }
 
 .section-container {
     gap: 4rem;
-    height: 80%;
+    align-items: center;
 }
 
 .section__pic-container {
@@ -372,7 +424,7 @@ p {
 }
 
 .skills-sub-title {
-    color: rgb(85, 85, 85);
+    color: var(--text-muted);
     font-weight: 600;
     font-size: 1.75rem;
     margin-bottom: 2rem;
@@ -413,15 +465,16 @@ article .icon {
 }
 
 .color-container {
-    padding: 1rem 0;
-    border-color: rgb(163, 163, 163);
-    background: rgb(250, 250, 250);
+    padding: 1.5rem;
+    border-color: var(--border);
+    background: var(--card-bg);
 }
 
 .project-img-container {
-    height: 330px;
-    width: 330px;
+    height: 220px;
+    width: 100%;
     border-radius: 1rem;
+    /* Scientific figures retain their original colors and white backgrounds. */
     background: white;
     display: flex;
     justify-content: center;
@@ -429,17 +482,21 @@ article .icon {
 }
 
 .project-img {
-    height: 240px;
+    max-height: 210px;
+    max-width: 100%;
     width: auto;
+    height: auto;
+    object-fit: contain;
 }
 
 .project-title {
     font-size: 1.4rem;
-    line-height: 1.5em; /* adjust as needed */
-    height: 3em; /* 2 lines */
-    overflow: hidden; /* hides extra content */
+    line-height: 1.5;
+    min-height: 3em;
+    height: auto;
+    overflow-wrap: anywhere;
     margin: 0.1rem 0.3rem;
-    color: black;
+    color: var(--text);
 }
 
 .project-btn-container {
@@ -454,15 +511,15 @@ article .icon {
     padding: 0.8rem;
     width: 7rem;
     border-radius: 2rem;
-    color: black;
-    border-color: rgb(163, 163, 163);
+    color: var(--text);
+    border-color: var(--border);
 }
 
 /* Publications Section */
 
 #publications {
     position: relative;
-    margin-top: 5rem;
+    margin-top: 0;
 }
 
 .publication-container {
@@ -482,7 +539,7 @@ article .icon {
 .footnote {
     font-size: 0.8rem;
     font-style: italic;
-    color: #666; /* Gray color for footnote */
+    color: var(--text-muted);
     text-align: justify; /* Center align the text */
     margin-top: 40px; /* Add some space at the top */
 }
@@ -508,6 +565,8 @@ article .icon {
 }
 
 .presentation-date {
+    flex: 0 0 6.5rem;
+    white-space: nowrap;
     font-size: 1.2rem;
     margin-right: 1.5rem;
 }
@@ -515,7 +574,7 @@ article .icon {
 .presentation-place {
     font-size: 1.2rem;
     font-weight: bold;
-    color: black;
+    color: var(--text);
     text-align: left;
 }
 .presentation-title {
@@ -531,16 +590,16 @@ article .icon {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    height: 70vh;
+    min-height: 320px;
 }
 
 .contact-info-upper-container {
     display: flex;
     justify-content: left;
     border-radius: 2rem;
-    border: rgb(53, 53, 53) 0.1rem solid;
-    border-color: rgb(163, 163, 163);
-    background: rgb(250, 250, 250);
+    border: var(--border-strong) 0.1rem solid;
+    border-color: var(--border);
+    background: var(--card-bg);
     gap: 0.7rem;
     margin: 2rem auto;
     padding: 0.5rem;
@@ -566,7 +625,7 @@ article .icon {
 /* Footer Section */
 
 footer {
-    height: 26vh;
+    padding: 1rem 0 2rem;
     margin: 0 1rem;
 }
 
@@ -574,3 +633,130 @@ footer p {
     font-size: small;
     text-align: center;
 }
+
+/* Accessible navigation and native resource links. */
+[hidden] { display: none !important; }
+
+:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 5px;
+}
+
+.skip-link {
+    position: fixed;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 100;
+    padding: 0.75rem 1rem;
+    background: var(--surface-bg);
+    border: 1px solid var(--focus);
+    border-radius: 0.5rem;
+    transform: translateY(-200%);
+}
+
+.skip-link:focus { transform: translateY(0); }
+
+.btn, .project-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: inherit;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    text-decoration: none;
+}
+
+.btn { width: auto; min-width: 8rem; }
+.project-btn { border: 0.1rem solid var(--border); }
+.btn:hover, .project-btn:hover { text-decoration: none; }
+
+#socials-container a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 50%;
+}
+
+#profile .section__pic-container { flex: 0 0 400px; }
+#profile .section__pic-container img { border-radius: 50%; }
+.section__pic-container picture { display: block; width: 100%; }
+.section__pic-container img { display: block; width: 100%; height: auto; }
+#profile .section__text { max-width: 520px; }
+.section__text .profile-role { font-size: 1.25rem; color: var(--text-strong); }
+.section__text .profile-affiliation { font-size: 1rem; font-weight: 400; margin-bottom: 1.5rem; }
+.profile-name-chinese { margin-bottom: 1rem; }
+
+#about .section-container { margin-top: 2rem; gap: 3rem; }
+#about .section__pic-container { flex: 0 0 320px; width: 320px; height: auto; }
+#about .about-containers { margin-top: 0; }
+#about .text-container a { text-decoration: underline; text-underline-offset: 0.2em; }
+
+#projects .about-containers {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 1.5rem;
+}
+
+#projects .details-container { min-width: 0; display: flex; }
+#projects .article-container {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 1.25rem;
+}
+
+.project-img-container picture { display: flex; align-items: center; justify-content: center; width: 100%; }
+.project-summary { text-align: left; }
+.project-summary p { margin-bottom: 0.75rem; }
+.project-question { color: var(--text-strong); font-weight: 500; }
+.project-topics { font-size: 0.875rem; margin-top: auto; }
+.project-btn-container { justify-content: flex-start; }
+.project-btn { width: auto; min-width: 5rem; }
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; }
+}
+
+
+/* Theme controls match the site's outlined, rounded buttons. */
+.nav-actions, .mobile-controls {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    padding: 0.6rem 0.85rem;
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+    border-radius: 2rem;
+    background: transparent;
+    color: var(--text);
+    font: 500 0.875rem 'Poppins', sans-serif;
+    cursor: pointer;
+}
+
+.theme-toggle:hover { background: var(--surface-bg); border-color: var(--text-muted); }
+.theme-toggle svg { flex-shrink: 0; }
+.theme-icon-sun { display: none; }
+:root[data-theme="dark"] .theme-icon-moon { display: none; }
+:root[data-theme="dark"] .theme-icon-sun { display: block; }
+
+/* Only the monochrome UI icons change; photographs and research figures do not. */
+:root[data-theme="dark"] .icon,
+:root[data-theme="dark"] .clickable-icon { filter: invert(1); }

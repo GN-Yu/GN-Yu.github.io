@@ -5,7 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://cdn.jsdelivr.net https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://cdn.jsdelivr.net; object-src 'none'; base-uri 'self'; form-action 'none'">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <title>Guoning Yu</title>
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff">
+    <title>Guoning Yu | Computational Neuroscientist</title>
+    <meta name="description" content="Guoning Yu is a postdoctoral researcher in the Insanally Lab at the University of Pittsburgh, studying learning and flexible behavior with computational neuroscience, mathematical modeling, and machine learning.">
+    <link rel="canonical" href="https://www.yuguoning.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Guoning Yu">
+    <meta property="og:title" content="Guoning Yu | Computational Neuroscientist">
+    <meta property="og:description" content="Computational neuroscience, mathematical modeling, and machine learning. Research, projects, and publications by Guoning Yu at the University of Pittsburgh.">
+    <meta property="og:url" content="https://www.yuguoning.com/">
+    <meta property="og:image" content="https://www.yuguoning.com/assets/optimized/hero-800.jpg">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="800">
+    <meta property="og:image:alt" content="Portrait of Guoning Yu">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Guoning Yu | Computational Neuroscientist">
+    <meta name="twitter:description" content="Research in computational neuroscience, mathematical modeling, and machine learning at the University of Pittsburgh.">
+    <meta name="twitter:image" content="https://www.yuguoning.com/assets/optimized/hero-800.jpg">
+    <meta name="twitter:image:alt" content="Portrait of Guoning Yu">
+    <script src="theme.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">
     <script id="MathJax-script" async
@@ -15,75 +34,82 @@
     </script>
 </head>
 <body>
-    <nav id="desktop-nav">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <nav id="desktop-nav" aria-label="Main navigation">
         <div class="logo">Guoning Yu</div>
-        <div>
+        <div class="nav-actions">
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#projects">Research</a></li>
                 <li><a href="#publications">Publications</a></li>
                 <li><a href="#presentations">Presentations</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode" hidden>
+                <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/></svg>
+                <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4m0-14.2-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>
+                <span data-theme-label>Dark</span>
+            </button>
         </div>
     </nav>
-    <nav id="hamburger-nav">
+    <nav id="hamburger-nav" aria-label="Mobile navigation">
         <div class="logo">Guoning Yu</div>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="menu-links">
-                <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
-                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                <li><a href="#publications" onclick="toggleMenu()">Publications</a></li>
-                <li><a href="#presentations" onclick="toggleMenu()">Presentations</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        <div class="mobile-controls">
+            <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode" hidden>
+                <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/></svg>
+                <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4m0-14.2-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>
+                <span data-theme-label>Dark</span>
+            </button>
+            <div class="hamburger-menu">
+                <button class="hamburger-icon" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="menu-links" id="mobile-menu" hidden>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Research</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#presentations">Presentations</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
             </div>
         </div>
     </nav>
+    <main id="main-content" tabindex="-1">
     <section id="profile">
         <div class="section__pic-container">
-            <img src="./assets/hero.jpg" alt="Guoning Yu profile picture">
+            <picture>
+                <source type="image/webp" srcset="./assets/optimized/hero-400.webp 400w, ./assets/optimized/hero-800.webp 800w" sizes="(max-width: 600px) 70vw, (max-width: 1200px) 300px, 400px">
+                <img src="./assets/optimized/hero-800.jpg" srcset="./assets/optimized/hero-400.jpg 400w, ./assets/optimized/hero-800.jpg 800w" sizes="(max-width: 600px) 70vw, (max-width: 1200px) 300px, 400px" width="800" height="800" fetchpriority="high" alt="Guoning Yu profile picture">
+            </picture>
         </div>
         <div class="section__text">
             <p class="section__text__p1">Hello, I'm</p>
             <h1 class="profile-name-title">Guoning Yu</h1>
-            <p class="profile-name-chinese">于国宁</p>
+            <p class="profile-name-chinese" lang="zh-Hans">于国宁</p>
+            <p class="profile-role">Computational neuroscientist</p>
+            <p class="profile-affiliation">Postdoctoral researcher · Insanally Lab<br>School of Medicine<br>University of Pittsburgh</p>
             <div class="btn-container">
-                <button class="btn btn-color-2" onclick="window.open('./assets/CV/CV(GuoningYu).html')">View CV</button>
-                <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
+                <a class="btn btn-color-2" href="./assets/CV/CV(GuoningYu).html" target="_blank" rel="noopener noreferrer">View CV</a>
+                <a class="btn btn-color-1" href="#projects">Explore Research</a>
             </div>
             <div id="socials-container">
-                <img 
-                src="./assets/linkedin.png" 
-                alt="My LinkedIn profile" 
-                class="clickable-icon" 
-                onclick="location.href='https://www.linkedin.com/in/guoning-yu/'"
-                />
-                <img 
-                src="./assets/github.png" 
-                alt="My Github profile" 
-                class="clickable-icon" 
-                onclick="location.href='https://github.com/GN-Yu'"
-                />
+                <a href="https://www.linkedin.com/in/guoning-yu/" aria-label="LinkedIn profile"><img src="./assets/linkedin.png" alt="" class="clickable-icon" width="32" height="32"></a>
+                <a href="https://github.com/GN-Yu" aria-label="GitHub profile"><img src="./assets/github.png" alt="" class="clickable-icon" width="32" height="32"></a>
+                <a href="mailto:guoning.yu@pitt.edu" aria-label="Email Guoning Yu"><img src="./assets/email.png" alt="" class="clickable-icon" width="32" height="32"></a>
             </div>
         </div>
     </section>
     <section id="about">
-        <p class="section__text__p1">Get To Know More</p>
-        <h1 class="title">About Me</h1>
+        <p class="section__text__p1">Get to know more</p>
+        <h2 class="title">About Me</h2>
         <div class="section-container">
             <div class="section__pic-container">
-                <img 
-                    src="./assets/yu-about-pic.jpg" 
-                    alt="Profile picture" 
-                    class="about-pic"
-                />
+                <picture>
+                    <source type="image/webp" srcset="./assets/optimized/yu-about-pic-400.webp 400w, ./assets/optimized/yu-about-pic-800.webp 800w" sizes="(max-width: 600px) 70vw, 320px">
+                    <img src="./assets/optimized/yu-about-pic-800.jpg" srcset="./assets/optimized/yu-about-pic-400.jpg 400w, ./assets/optimized/yu-about-pic-800.jpg 800w" sizes="(max-width: 600px) 70vw, 320px" width="800" height="800" loading="lazy" decoding="async" alt="Guoning Yu outdoors" class="about-pic">
+                </picture>
             </div>
             <div class="about-details-container">
                 <div class="about-containers">
@@ -94,7 +120,7 @@
                             class="icon"
                         />
                         <h3>Experience</h3>
-                        <p>5+ year research<br>Data Science / Machine Learning </p>
+                        <p>5+ years of research<br>Data Science / Machine Learning </p>
                         <p>in application to<br>Neuroscience and Mathematics</p>
                     </div>
                     <div class="details-container">
@@ -110,174 +136,81 @@
                 </div>
                 <div class="text-container">
                     <p>
-                        I'm a postdoctoral researcher and computational neuroscientist working in <a href="https://www.insanallylab.com/" target="_blank" rel="noopener noreferrer" style="color: black; font-style: italic;">Insanally Lab</a> at University of Pittsburgh. I received my Ph. D. in Mathematics at Georgia State University with Drs. <a href="https://math.gsu.edu/gchen/" target="_blank" rel="noopener noreferrer" style="color: black; font-style: italic;">Guantao Chen</a> and <a href="https://math.gsu.edu/ymolkov/" target="_blank" rel="noopener noreferrer" style="color: black; font-style: italic;">Yaroslav Molkov</a> as my supervisors. My current interests are in machine learning, computational neuroscience, and graph theory.
+                        I'm a postdoctoral researcher and computational neuroscientist working in <a href="https://www.insanallylab.com/" target="_blank" rel="noopener noreferrer" style="font-style: italic;">Insanally Lab</a> at University of Pittsburgh. I use mathematical modeling and machine learning to study how neural circuits support auditory perception and flexible behavior, building on a background in mathematics and graph theory. I received my Ph. D. in Mathematics at Georgia State University with Drs. <a href="https://math.gsu.edu/gchen/" target="_blank" rel="noopener noreferrer" style="font-style: italic;">Guantao Chen</a> and <a href="https://math.gsu.edu/ymolkov/" target="_blank" rel="noopener noreferrer" style="font-style: italic;">Yaroslav Molkov</a> as my supervisors. My current interests are in machine learning, computational neuroscience, and graph theory.
                     </p>
                 </div>
             </div>
         </div>
-        <img 
-            src="./assets/arrow.png" 
-            alt="Arrow icon" 
-            class="icon arrow" 
-            onclick="location.href='./#experience'"
-        />
-    </section>
-    <section id="skills">
-        <p class="section__text__p1">Explore My</p>
-        <h1 class="title">Skills</h1>
-        <div class="skills-details-container">
-            <div class="about-containers">
-                <div class="details-container">
-                    <h2 class="skills-sub-title">Machine Learning</h2>
-                    <div class="article-container">
-                        <article>
-                            <img src="./assets/checkmark.png" alt="skills icon" class="icon">
-                            <div>
-                                <h3>Python</h3>
-                                <p>Experienced</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Skills icon" class="icon">
-                            <div>
-                                <h3>PyTorch</h3>
-                                <p>Experienced</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Skills icon" class="icon">
-                            <div>
-                                <h3>TensorFlow</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Skills icon" class="icon">
-                            <div>
-                                <h3>SQL</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Skills icon" class="icon">
-                            <div>
-                                <h3>Git</h3>
-                                <p>Fundamental</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Skills icon" class="icon">
-                            <div>
-                                <h3>LLMs</h3>
-                                <p>Fundamental</p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-                <div class="details-container">
-                    <h2 class="skills-sub-title">Applied Mathematics</h2>
-                    <div class="article-container">
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Skills icon" class="icon">
-                            <div>
-                                <h3>Modeling</h3>
-                                <p>Experienced</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Skills icon" class="icon">
-                            <div>
-                                <h3>Reasoning</h3>
-                                <p>Experienced</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Skills icon" class="icon">
-                            <div>
-                                <h3>C++</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Skills icon" class="icon">
-                            <div>
-                                <h3>MATLAB</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Skills icon" class="icon">
-                            <div>
-                                <h3>\(\LaTeX\)</h3>
-                                <p>Experienced</p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <img 
-            src="./assets/arrow.png" 
-            alt="Arrow icon" 
-            class="icon arrow" 
-            onclick="location.href='./#projects'"
-        />
+        <a href="#projects" class="arrow" aria-label="Continue to research"><img src="./assets/arrow.png" alt="" class="icon" width="32" height="32" loading="lazy" decoding="async"></a>
     </section>
     <section id="projects">
-        <p class="section__text__p1">Browse My Recent</p>
-        <h1 class="title">Projects</h1>
+        <p class="section__text__p1">Explore my work</p>
+        <h2 class="title">Selected Research</h2>
         <div class="skills-details-container">
             <div class="about-containers">
                 <div class="details-container color-container">
                     <div class="article-container">
                         <div class="project-img-container">
-                            <img src="./assets/project_alzheimer.png" alt="Project Alzheimer" class="project-img">
+                            <picture><source type="image/webp" srcset="./assets/optimized/project_alzheimer-800.webp"><img src="./assets/project_alzheimer.png" alt="Clinical data modeling illustration" class="project-img" loading="lazy" decoding="async"></picture>
                         </div>
-                        <h2 class="skills-sub-title project-title">Alzheimer's Disease<br>Clinical Data Modeling</h2>
+                        <h3 class="project-title">Alzheimer's Disease<br>Clinical Data Modeling</h3>
+                        <div class="project-summary">
+                            <p>Understanding Alzheimer’s disease means finding meaningful patterns in complex patient records.</p>
+                            <p class="project-question">What can changes in memory and biomarkers tell us about Alzheimer’s disease?</p>
+                            <p>This exploratory project uses machine learning to examine how biomarkers and memory-test scores relate to diagnosis, including how they change over time. Comparing these signals helps identify which measurements carry useful information for further research.</p>
+                        </div>
+                        <p class="project-topics">Clinical data · Machine learning</p>
                         <div class="project-btn-container">
-                            <button class="btn-color-2 project-btn" onclick="window.open('https://github.com/GN-Yu/Alzheimer-prediction');">Github</button>
-                            <button class="btn-color-2 project-btn" onclick="window.open('https://adni.loni.usc.edu/');">Data Source</button>
+                            <a class="btn-color-2 project-btn" href="https://github.com/GN-Yu/Alzheimer-prediction" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            <a class="btn-color-2 project-btn" href="https://adni.loni.usc.edu/" target="_blank" rel="noopener noreferrer">Data Source</a>
                         </div>
                     </div>
                 </div>
                 <div class="details-container color-container">
                     <div class="article-container">
                         <div class="project-img-container">
-                            <img src="./assets/CPG.png" alt="Project Locomotion" class="project-img">
+                            <picture><source type="image/webp" srcset="./assets/optimized/CPG-800.webp"><img src="./assets/CPG.png" alt="Neural circuit model for mouse locomotion" class="project-img" loading="lazy" decoding="async"></picture>
                         </div>
-                        <h2 class="skills-sub-title project-title">Mouse Locomotion Control</h2>
+                        <h3 class="project-title">Mouse Locomotion Control</h3>
+                        <div class="project-summary">
+                            <p>Every step requires the nervous system to coordinate the limbs and respond to signals from the body.</p>
+                            <p class="project-question">How does the nervous system keep a walking animal coordinated and balanced?</p>
+                            <p>This neuro-biomechanical model of mouse locomotion explores how neural circuits, body mechanics, and sensory feedback work together. The simulations suggest how these interactions shape walking patterns and maintain direction, providing testable explanations for a fundamental ability that depends on many interacting parts.</p>
+                        </div>
+                        <p class="project-topics">Computational neuroscience · Modeling</p>
                         <div class="project-btn-container">
-                            <button class="btn-color-2 project-btn" onclick="window.open('https://www.biorxiv.org/content/biorxiv/early/2023/11/02/2023.10.31.564886.full.pdf');">Paper</button>
-                            <button class="btn-color-2 project-btn" onclick="window.open('https://drive.google.com/file/d/1Ywb2uIj8uuxFvWf9zUhpDoUv2dydJuAw/view?usp=sharing');">Presentation</button>
-                            <button class="btn-color-2 project-btn" onclick="window.open('https://github.com/GN-Yu/Locomotor_quad')">Github</button>
+                            <a class="btn-color-2 project-btn" href="https://www.biorxiv.org/content/biorxiv/early/2023/11/02/2023.10.31.564886.full.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
+                            <a class="btn-color-2 project-btn" href="https://drive.google.com/file/d/1Ywb2uIj8uuxFvWf9zUhpDoUv2dydJuAw/view?usp=sharing" target="_blank" rel="noopener noreferrer">Presentation</a>
+                            <a class="btn-color-2 project-btn" href="https://github.com/GN-Yu/Locomotor_quad" target="_blank" rel="noopener noreferrer">GitHub</a>
                         </div>
                     </div>
                 </div>
                 <div class="details-container color-container">
                     <div class="article-container">
                         <div class="project-img-container">
-                            <img src="./assets/LAC.png" alt="Project LAC" class="project-img">
+                            <picture><source type="image/webp" srcset="./assets/optimized/LAC-800.webp"><img src="./assets/LAC.png" alt="Graph decomposition illustration" class="project-img" loading="lazy" decoding="async"></picture>
                         </div>
-                        <h2 class="skills-sub-title project-title">Linear Arboricity<br>of Degenerate Graphs</h2>
+                        <h3 class="project-title">Linear Arboricity<br>of Degenerate Graphs</h3>
+                        <div class="project-summary">
+                            <p>Breaking a network into simpler pieces helps reveal how it is organized.</p>
+                            <p class="project-question">How few sets of paths are needed to decompose a network?</p>
+                            <p>This work studies how a network’s connections can be partitioned into sets of disjoint paths. It proves limits on the number of sets needed for certain types of networks, advancing a longstanding mathematical conjecture that links a network’s overall structure to the number of connections around individual points.</p>
+                        </div>
+                        <p class="project-topics">Graph theory · Decomposition</p>
                         <div class="project-btn-container">
-                            <button class="btn-color-2 project-btn" onclick="window.open('https://doi.org/10.1002/jgt.22967');">Paper 1</button>
-                            <button class="btn-color-2 project-btn" onclick="window.open('https://doi.org/10.1002/jgt.23040');">Paper 2</button>
-                            <button class="btn-color-2 project-btn" onclick="window.open('https://www.youtube.com/watch?v=eRsGnnrOb0Q');">Presentation</button>
+                            <a class="btn-color-2 project-btn" href="https://doi.org/10.1002/jgt.22967" target="_blank" rel="noopener noreferrer">Paper 1</a>
+                            <a class="btn-color-2 project-btn" href="https://doi.org/10.1002/jgt.23040" target="_blank" rel="noopener noreferrer">Paper 2</a>
+                            <a class="btn-color-2 project-btn" href="https://www.youtube.com/watch?v=eRsGnnrOb0Q" target="_blank" rel="noopener noreferrer">Presentation</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <img 
-            src="./assets/arrow.png" 
-            alt="Arrow icon" 
-            class="icon arrow" 
-            onclick="location.href='./#publications'"
-        />
+        <a href="#publications" class="arrow" aria-label="Continue to publications"><img src="./assets/arrow.png" alt="" class="icon" width="32" height="32" loading="lazy" decoding="async"></a>
     </section>
     <section id="publications">
-        <p class="section__text__p1">List of My</p>
-        <h1 class="title">Publications</h1>
+        <p class="section__text__p1">List of my</p>
+        <h2 class="title">Publications</h2>
         <div class="publication-container">
             <ul class="publication-list">
                 <li>
@@ -326,16 +259,11 @@
             <a href="https://www.ams.org/profession/leaders/culture/JointResearchandItsPublicationfinal.pdf" target="_blank" rel="noopener noreferrer">Culture Statement</a>
             from American Mathematical Society.</p>
         </div>
-        <img 
-            src="./assets/arrow.png" 
-            alt="Arrow icon" 
-            class="icon arrow" 
-            onclick="location.href='./#presentations'"
-        />
+        <a href="#presentations" class="arrow" aria-label="Continue to presentations"><img src="./assets/arrow.png" alt="" class="icon" width="32" height="32" loading="lazy" decoding="async"></a>
     </section>
     <section id="presentations">
-        <p class="section__text__p1">Some of My Academic</p>
-        <h1 class="title">Presentations</h1>
+        <p class="section__text__p1">Some of my academic</p>
+        <h2 class="title">Presentations</h2>
         <div class="presentation-container">
             <div class="presentation-item">
                 <p class="presentation-date">
@@ -394,16 +322,11 @@
         </div>
         
 
-        <img 
-            src="./assets/arrow.png" 
-            alt="Arrow icon" 
-            class="icon arrow" 
-            onclick="location.href='./#contact'"
-        />
+        <a href="#contact" class="arrow" aria-label="Continue to contact"><img src="./assets/arrow.png" alt="" class="icon" width="32" height="32" loading="lazy" decoding="async"></a>
     </section>
     <section id="contact">
-        <p class="section__text__p1">Get in Touch</p>
-        <h1 class="title">Contact Me</h1>
+        <p class="section__text__p1">Get in touch</p>
+        <h2 class="title">Contact Me</h2>
         <div class="contact-info-upper-container">
             <div class="contact-info-container">
                 <img src="./assets/email.png" alt="Email icon" class="icon contact-icon">
@@ -415,13 +338,13 @@
             </div>
         </div>
     </section>
+    </main>
     <footer>
-        <nav>
+        <nav aria-label="Footer navigation">
             <div class="nav-links-container">
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#projects">Research</a></li>
                     <li><a href="#publications">Publications</a></li>
                     <li><a href="#presentations">Presentations</a></li>
                     <li><a href="#contact">Contact</a></li>
